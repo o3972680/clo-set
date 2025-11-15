@@ -4,7 +4,6 @@ A modern shopping website built with React and Vite(Rolldown), featuring respons
 
 ## Features
 ### Navigation
-- Header with CONNET logo(https://storagefiles.clo-set.com/public/connect/common/connect-desktop-header-bi.svg)
 - Navigation menu with STORE, GALLERY, CONTEST, COMMUNITY options
 - Authentication options (SIGN IN, SIGN UP)
 - Currently, only the STORE functionality is implemented
