@@ -1,0 +1,87 @@
+.header {
+    width: 100%;
+    background-color: #1f1f1f;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    margin: 0 auto;
+    height: 64px;
+}
+
+.logoContainer {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 20px;
+    object-fit: contain;
+}
+
+.menuContainer {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.menu {
+    background: transparent;
+    border-bottom: none;
+    min-width: 500px;
+    display: flex;
+    justify-content: center;
+
+    :global(.ant-menu-item) {
+        font-weight: 600;
+        text-align: center;
+    }
+}
+
+.authContainer {
+    display: flex;
+    gap: 1rem;
+}
+
+.signinButton {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.9);
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.15);
+        border-color: rgba(255, 255, 255, 0.3);
+        color: #ffffff;
+    }
+}
+
+.signupButton {
+    &:hover {
+        background-color: #40a9ff !important;
+    }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .headerContainer {
+        padding: 0 1rem;
+    }
+
+    .menu {
+        min-width: auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .authContainer button {
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+}

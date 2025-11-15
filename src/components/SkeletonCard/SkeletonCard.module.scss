@@ -1,0 +1,35 @@
+.productCard {
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    .cardImgContainer {
+        position: relative;
+        overflow: hidden;
+        padding-top: 100%; /* 4:3 Aspect Ratio */
+
+        img,
+        .skeletonImg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .cardMeta {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-top: 8px;
+        .priceTag {
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 24px;
+            color: rgba(255, 255, 255, 0.85);
+        }
+    }
+}

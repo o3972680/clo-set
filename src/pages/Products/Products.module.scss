@@ -1,0 +1,93 @@
+.productsContainer {
+    padding: 1rem 1.5rem 1.5rem 1.5rem;
+    width: 100%;
+    .filtersSection {
+        margin-bottom: 24px;
+        padding: 16px;
+        border-radius: 8px;
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+}
+
+.searchSortRow {
+    margin-top: 20px;
+}
+
+.searchInput {
+    width: 100%;
+    height: 40px;
+}
+
+.sortContainer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 40px;
+}
+
+.sortSelect {
+    min-width: 150px;
+}
+
+.sliderContainer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 8px;
+
+    .priceSlider {
+        flex-grow: 1;
+    }
+}
+
+.productsGrid {
+    width: 100%;
+
+    .productCol {
+        margin-bottom: 16px;
+    }
+}
+
+.loadingContainer {
+    display: flex;
+    justify-content: center;
+    padding: 24px 0;
+    width: 100%;
+}
+
+.errorMessage {
+    padding: 16px;
+    text-align: center;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+    .productCol {
+        width: 33.333%;
+    }
+}
+
+@media (max-width: 768px) {
+    .productsContainer {
+        padding: 16px;
+    }
+
+    .productCol {
+        width: 50%;
+    }
+
+    .sortContainer {
+        justify-content: flex-start;
+        margin-top: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .productsContainer {
+        padding: 12px;
+    }
+
+    .productCol {
+        width: 100%;
+    }
+}
