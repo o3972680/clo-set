@@ -4,9 +4,7 @@ A modern shopping website built with React and Vite(Rolldown), featuring respons
 
 ## Features
 ### Navigation
-- Navigation menu with STORE, GALLERY, CONTEST, COMMUNITY options
-- Authentication options (SIGN IN, SIGN UP)
-- Currently, only the STORE functionality is implemented
+- Currently, only the STORE functionality is implemented, other MENU like GALLERY, CONTEST, COMMUNITY, SIGN IN and SIGN UP are placeholders
 
 ### Store Page
 #### Contents Filter
