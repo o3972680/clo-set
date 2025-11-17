@@ -1,0 +1,9 @@
+.sortContainer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 40px;
+    .sortSelect {
+        min-width: 150px;
+    }
+}

@@ -1,0 +1,16 @@
+.filtersSection {
+    margin-bottom: 24px;
+    padding: 16px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.05);
+    .sliderContainer {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 8px;
+
+        .priceSlider {
+            flex-grow: 1;
+        }
+    }
+}

@@ -1,32 +1,25 @@
-import { Card, Skeleton } from "antd";
+import { Button, Card, Skeleton } from "antd";
 import styles from "./SkeletonCard.module.scss";
 import Meta from "antd/es/card/Meta";
+import Cart from "@/assets/cart.svg?react";
+import Icon from "@ant-design/icons";
+import type { ApiItem } from "@/types";
 
-export interface CardProps {
-    isLoading: boolean;
-    creator?: string;
-    title?: string;
-    imagePath?: string;
-    price?: number;
-    priceType?: "Free" | "Paid" | "View Only";
-}
-
-const SkeletonCard = (props: CardProps) => {
-    const { isLoading, title, creator, imagePath, price, priceType } = props;
-
-    if (isLoading) {
+const SkeletonCard = (props: ApiItem) => {
+    const { loading, title, creator, imagePath, price, priceType } = props;
+    if (loading) {
         return (
             <Card
                 hoverable
                 cover={
-                    <div className={styles["cardImgContainer"]}>
+                    <div className={styles.cardImgContainer}>
                         <Skeleton.Image active className={styles.skeletonImg} />
                     </div>
                 }
                 className={styles.productCard}
             >
-                <div style={{ padding: 16 }}>
-                    <Skeleton active paragraph={{ rows: 2 }} />
+                <div>
+                    <Skeleton active paragraph={{ rows: 1 }} />
                 </div>
             </Card>
         );
@@ -36,24 +29,29 @@ const SkeletonCard = (props: CardProps) => {
         <Card
             hoverable
             cover={
-                <div className={styles["cardImgContainer"]}>
+                <div className={styles.cardImgContainer}>
                     <img alt={title} src={imagePath} />
+                    <Button
+                        className={styles.cartIcon}
+                        shape="circle"
+                        icon={<Icon component={Cart} />}
+                    />
                 </div>
             }
-            className={styles["productCard"]}
+            className={styles.productCard}
         >
             <Meta
                 title={title}
                 description={
-                    <div className={styles["cardMeta"]}>
-                        <div className={styles["priceTag"]}>
+                    <div className={styles.cardMeta}>
+                        <div className={styles.priceTag}>
                             {priceType === "Paid" ? (
                                 <span>${price}</span>
                             ) : (
                                 <span>{priceType}</span>
                             )}
                         </div>
-                        <div className={styles["userName"]}>
+                        <div className={styles.userName}>
                             Designer: {creator}
                         </div>
                     </div>

@@ -54,8 +54,20 @@ const Header: React.FC = () => {
                 </div>
 
                 <div className={styles.authContainer}>
-                    <Button className={styles.signinButton}>SIGN IN</Button>
-                    <Button type="primary" className={styles.signupButton}>
+                    <Button
+                        variant="text"
+                        color="default"
+                        className={styles.signinButton}
+                        size="small"
+                    >
+                        SIGN IN
+                    </Button>
+                    <Button
+                        color="default"
+                        variant="outlined"
+                        className={styles.signupButton}
+                        size="small"
+                    >
                         SIGN UP
                     </Button>
                 </div>

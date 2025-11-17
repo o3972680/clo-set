@@ -1,5 +1,5 @@
-import type { ApiItem } from "../types";
-import { CacheManager } from "../utils/cache";
+import type { ApiItem } from "@/types";
+import { CacheManager } from "@/utils/cache";
 
 const API_URL = "https://closet-recruiting-api.azurewebsites.net/api/data";
 const CACHE_DURATION = 60 * 60 * 1000; // 60 minutes in milliseconds
@@ -15,7 +15,7 @@ const apiCache = new CacheManager<ApiItem[]>(CACHE_DURATION);
  */
 export const fetchItems = async (
     page: number = 0,
-    limit: number = 20
+    limit: number = 8
 ): Promise<ApiItem[]> => {
     const cacheKey = `${page}-${limit}`;
 

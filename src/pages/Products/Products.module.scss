@@ -6,53 +6,48 @@
         padding: 16px;
         border-radius: 8px;
         background-color: rgba(255, 255, 255, 0.05);
+        .sliderContainer {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 8px;
+
+            .priceSlider {
+                flex-grow: 1;
+            }
+        }
+    }
+    .productsGrid {
+        width: 100%;
+
+        .productCol {
+            margin-bottom: 16px;
+        }
+    }
+    .sentinel {
+        height: 1px;
+        opacity: 0;
+        margin: 20px 0;
+    }
+    .loadFinished {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        font-size: 1rem;
+        font-weight: 500;
+        color: #fff;
     }
 }
 
-.searchSortRow {
-    margin-top: 20px;
-}
-
-.searchInput {
-    width: 100%;
-    height: 40px;
-}
-
-.sortContainer {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    height: 40px;
-}
-
-.sortSelect {
-    min-width: 150px;
-}
-
-.sliderContainer {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-top: 8px;
-
-    .priceSlider {
-        flex-grow: 1;
+.search {
+    margin-bottom: 1rem;
+    .searchInput {
+        width: 100%;
+        height: 3rem;
+        border-radius: 3rem;
+        padding: 0 1rem;
     }
-}
-
-.productsGrid {
-    width: 100%;
-
-    .productCol {
-        margin-bottom: 16px;
-    }
-}
-
-.loadingContainer {
-    display: flex;
-    justify-content: center;
-    padding: 24px 0;
-    width: 100%;
 }
 
 .errorMessage {
