@@ -1,0 +1,31 @@
+.productList {
+    width: 100%;
+
+    .productCol {
+        margin-bottom: 16px;
+    }
+}
+
+.errorMessage {
+    padding: 16px;
+    text-align: center;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+    .productCol {
+        width: 33.333%;
+    }
+}
+
+@media (max-width: 768px) {
+    .productCol {
+        width: 50%;
+    }
+}
+
+@media (max-width: 480px) {
+    .productCol {
+        width: 100%;
+    }
+}

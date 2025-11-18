@@ -10,7 +10,7 @@ export class CacheManager<T> {
   private cache: Record<string, CacheItem<T>> = {};
   private cacheDuration: number;
 
-  constructor(cacheDuration: number = 5 * 60 * 1000) { // Default 5 minutes
+  constructor(cacheDuration: number = 5 * 60 * 1000) {
     this.cacheDuration = cacheDuration;
   }
 

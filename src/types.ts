@@ -33,7 +33,9 @@ export interface StoreState {
         "View Only": boolean;
     };
     priceRange: [number, number];
+    // Search
     keyword: string;
+    // Sorting
     sortBy: SortOption;
 
     // Actions

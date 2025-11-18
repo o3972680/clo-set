@@ -1,4 +1,4 @@
-import { Button, Card, Skeleton } from "antd";
+import { Button, Card, Skeleton, Typography } from "antd";
 import styles from "./SkeletonCard.module.scss";
 import Meta from "antd/es/card/Meta";
 import Cart from "@/assets/cart.svg?react";
@@ -41,18 +41,18 @@ const SkeletonCard = (props: ApiItem) => {
             className={styles.productCard}
         >
             <Meta
-                title={title}
                 description={
                     <div className={styles.cardMeta}>
+                        <div className={styles.leftDesc}>
+                            <Typography.Text>{title}</Typography.Text>
+                            <div className={styles.userName}>{creator}</div>
+                        </div>
                         <div className={styles.priceTag}>
                             {priceType === "Paid" ? (
                                 <span>${price}</span>
                             ) : (
                                 <span>{priceType}</span>
                             )}
-                        </div>
-                        <div className={styles.userName}>
-                            Designer: {creator}
                         </div>
                     </div>
                 }

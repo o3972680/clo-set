@@ -4,7 +4,7 @@ import React from "react";
 import type { PricingOption } from "@/types";
 import styles from "./Filter.module.scss";
 
-const { Title, Text } = Typography;
+const { Text } = Typography;
 
 export interface FilterProps {
     pricingOptions: Record<PricingOption, boolean>;
@@ -26,13 +26,12 @@ const Filter: React.FC<FilterProps> = ({
     return (
         <div className={styles.filtersSection}>
             <Row
-                gutter={[24, 16]}
                 align="middle"
-                style={{ minHeight: "4.5rem" }}
+                style={{ minHeight: "4em"}}
             >
-                <Col xs={24} sm={12} md={8} lg={6} xl={4}>
-                    <Title level={4}>Pricing Options</Title>
+                <Col>
                     <Space direction="horizontal" size="middle">
+                        <Text>Pricing Options</Text>
                         <Checkbox
                             checked={pricingOptions.Paid}
                             onChange={() => onPricingToggle("Paid")}
@@ -48,7 +47,6 @@ const Filter: React.FC<FilterProps> = ({
                         <Checkbox
                             checked={pricingOptions["View Only"]}
                             onChange={() => onPricingToggle("View Only")}
-                            style={{ minWidth: "13rem" }}
                         >
                             View Only
                         </Checkbox>
@@ -57,14 +55,12 @@ const Filter: React.FC<FilterProps> = ({
 
                 {pricingOptions.Paid && (
                     <Col
-                        xs={24}
-                        sm={24}
-                        md={16}
-                        lg={12}
-                        xl={10}
-                        style={{ marginLeft: "10rem" }}
+                        xs={8}
+                        sm={8}
+                        md={8}
+                        lg={8}
+                        xl={8}
                     >
-                        <Title level={4}>Price Range</Title>
                         <div className={styles.sliderContainer}>
                             <Text>${priceRange[0]}</Text>
                             <Slider
@@ -82,11 +78,7 @@ const Filter: React.FC<FilterProps> = ({
                 )}
 
                 <Col
-                    xs={24}
-                    sm={12}
-                    md={8}
-                    lg={6}
-                    xl={4}
+
                     style={{
                         marginLeft: "auto",
                         display: "flex",

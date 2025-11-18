@@ -87,7 +87,6 @@ const useStoreStore = create<StoreState>()(
             // Initial fetch (used on first load and after filter changes)
             fetchInitialItems: async () => {
                 const {
-                    pageSize,
                     pricingOptions,
                     priceRange,
                     keyword,
@@ -104,7 +103,7 @@ const useStoreStore = create<StoreState>()(
                 });
 
                 try {
-                    const items = await fetchItems(0, pageSize);
+                    const items = await fetchItems();
 
                     let filteredItems = items || [];
                     filteredItems = filteredItems.map((item) => ({
@@ -133,9 +132,13 @@ const useStoreStore = create<StoreState>()(
                     if (pricingOptions.Paid) {
                         filteredItems = filteredItems.filter(
                             (item) =>
-                                item.priceType === "Paid" &&
-                                item.price >= priceRange[0] &&
-                                item.price <= priceRange[1]
+                                (item.priceType === "Paid" &&
+                                    item.price >= priceRange[0] &&
+                                    item.price <= priceRange[1]) ||
+                                (pricingOptions.Free &&
+                                    item.priceType === "Free") ||
+                                (pricingOptions["View Only"] &&
+                                    item.priceType === "View Only")
                         );
                     }
 

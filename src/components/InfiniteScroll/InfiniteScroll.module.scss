@@ -1,0 +1,14 @@
+.sentinel {
+    height: 1px;
+    opacity: 0;
+    margin: 20px 0;
+}
+.loadFinished {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+}
