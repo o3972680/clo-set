@@ -43,7 +43,6 @@ export const useProducts = () => {
     };
 
     const handleResetFilters = () => {
-        setSearchValue("");
         setLocalPriceRange([0, 999]);
         resetFilters();
     };

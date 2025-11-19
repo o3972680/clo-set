@@ -25,10 +25,7 @@ const Filter: React.FC<FilterProps> = ({
 }) => {
     return (
         <div className={styles.filtersSection}>
-            <Row
-                align="middle"
-                style={{ minHeight: "4em"}}
-            >
+            <Row align="middle" style={{ minHeight: "4em" }}>
                 <Col>
                     <Space direction="horizontal" size="middle">
                         <Text>Pricing Options</Text>
@@ -53,16 +50,12 @@ const Filter: React.FC<FilterProps> = ({
                     </Space>
                 </Col>
 
-                {pricingOptions.Paid && (
-                    <Col
-                        xs={8}
-                        sm={8}
-                        md={8}
-                        lg={8}
-                        xl={8}
-                    >
+                {
+                    <Col xs={8} sm={8} md={8} lg={8} xl={8}>
                         <div className={styles.sliderContainer}>
-                            <Text>${priceRange[0]}</Text>
+                            <Text disabled={!pricingOptions.Paid}>
+                                ${priceRange[0]}
+                            </Text>
                             <Slider
                                 range
                                 min={0}
@@ -71,14 +64,16 @@ const Filter: React.FC<FilterProps> = ({
                                 onChange={onPriceRangeChange}
                                 onAfterChange={onPriceRangeAfterChange}
                                 className={styles.priceSlider}
+                                disabled={!pricingOptions.Paid}
                             />
-                            <Text>${priceRange[1]}</Text>
+                            <Text disabled={!pricingOptions.Paid}>
+                                ${priceRange[1]}
+                            </Text>
                         </div>
                     </Col>
-                )}
+                }
 
                 <Col
-
                     style={{
                         marginLeft: "auto",
                         display: "flex",

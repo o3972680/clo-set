@@ -8,33 +8,28 @@ const { Text } = Typography;
 export interface SortProps {
     sortBy: string;
     onSortChange: (value: string) => void;
-    isPaid: boolean;
     totalItems: number;
 }
 
-const Sort: React.FC<SortProps> = ({ sortBy, onSortChange, isPaid, totalItems }) => {
+const Sort: React.FC<SortProps> = ({ sortBy, onSortChange, totalItems }) => {
     return (
         <Row className={styles.sortRow}>
             <Col xs={24} md={24} sm={24} lg={24}>
                 <div className={styles.sortContainer}>
                     <Text>{totalItems} items</Text>
                     <Divider type="vertical" />
-                    <Text strong style={{ marginRight: "10px" }}>
+                    <Text strong style={{ marginRight: ".5rem" }}>
                         Sort by
                     </Text>
                     <Select
                         value={sortBy}
                         onChange={onSortChange}
                         className={styles.sortSelect}
-                        bordered={false}
+                        variant='borderless'
                     >
                         <Option value="Item Name">Item Name</Option>
-                        <Option value="Higher Price" disabled={!isPaid}>
-                            Higher Price
-                        </Option>
-                        <Option value="Lower Price" disabled={!isPaid}>
-                            Lower Price
-                        </Option>
+                        <Option value="Higher Price">Higher Price</Option>
+                        <Option value="Lower Price">Lower Price</Option>
                     </Select>
                 </div>
             </Col>

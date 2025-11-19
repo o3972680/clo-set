@@ -1,83 +1,97 @@
-# CONNET - Shopping Website
+# CLO-SET - Modern Shopping Website
 
-A modern shopping website built with React and Vite(Rolldown), featuring responsive design, advanced filtering capabilities, and persistent state management.
+A sleek, responsive shopping platform built with React and Vite (Rolldown). It features advanced filtering, sorting, infinite scroll, and persistent state management for a seamless user experience.
 
-## Features
+## Installation & Setup
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/o3972680/clo-set.git
+cd clo-set
+
+# 2. Install dependencies (uses pnpm for faster installs)
+pnpm install
+
+# 3. Start local development server
+npm run start
+
+# 4. Build production bundle (optimized for performance)
+npm run build
+
+# 5. Run unit tests (Vitest)
+npm run test
+
+# 6. Generate test coverage report
+npm run coverage
+```
+
+## Core Features
+
 ### Navigation
-- Currently, only the STORE functionality is implemented, other MENU like GALLERY, CONTEST, COMMUNITY, SIGN IN and SIGN UP are placeholders
+
+-   Only the **STORE** functionality is fully implemented.
+-   Other menu items (GALLERY, CONTEST, COMMUNITY, SIGN IN, SIGN UP) are placeholders for future expansion.
 
 ### Store Page
-#### Contents Filter
-- **Pricing Options**: Filter by Paid, Free, and View Only
-  - Multiple options can be selected simultaneously
-  - Default state is unchecked (shows all items)
-- **Reset Button**: Restores filters to default state, and the sorting option to "Item Name"
-- **Pricing Slider**:
-  - Range from 0 to 999
-  - Activated only when "Paid" option is selected
-  - Displays selected price range on both sides of the slider
 
-#### Sorting Options
-- Dropdown menu with sorting criteria:
-  - Item Name (Default)
-  - Higher Price
-  - Lower Price
-- If the "Paid" option is selected, the "Higher Price" and "Lower Price" options are disabled
-- If the "Paid" option is not selected, the "Higher Price" and "Lower Price" options are enabled
+The store is the core feature, with a focus on intuitive content discovery and filtering.
 
-#### Keyword Search
-- Filter content based on creator or title
-- Can be combined with Pricing Option filters
-- Empty search displays all items
+#### 1. Content Filters
 
-#### Contents List
-- Displays each item's:
-  - Photo
-  - Creator (Designer)
-  - Title
-  - Pricing (Free/View Only/Paid with price)
-- Implemented skeleton UI loading state
-- Responsive grid system:
-  - Default (>1200px): 4 columns
-  - <1200px: 3 columns
-  - <768px: 2 columns
-  - <480px: 1 column
+-   **Pricing Options**: Filter by 3 categories (Paid, Free, View Only)
+    -   Supports multi-selection (e.g., select both Free and View Only)
+    -   Default state: All options unchecked (shows all items)
+-   **Reset Button**: One-click restoration of default filter/sort states
+-   **Price Slider** (Paid-only):
+    -   Range: 0 – 999
+    -   Activates **only** when "Paid" is selected
+    -   Displays selected min/max price values next to the slider
 
-#### State Persistence
-- Maintains filters and search results after page refresh
-- Implemented with Zustand, without using browser storage
+#### 2. Sorting Options
+
+-   Dropdown menu with 3 sorting criteria:
+    -   Item Name (default)
+    -   Higher Price
+    -   Lower Price
+-   Shows total number of items matching the current filters
+
+#### 3. Keyword Search
+
+-   Searches across **item title** and **creator name**
+-   Works in combination with filters (filters + search = precise results)
+-   Empty search: Displays all items (respects active filters)
+
+#### 4. Item List
+
+-   Each item card displays:
+    -   Product image
+    -   Creator name
+    -   Item title
+    -   Pricing (Free / View Only / $X.XX for Paid items)
+-   Loading state: Skeleton UI for smooth perceived performance
+-   Infinite scroll: Automatically loads more items as the user scrolls
+-   Responsive grid layout (adapts to screen size):
+
+| Screen Size        | Columns |
+| ------------------ | ------- |
+| > 1200px (Desktop) | 4       |
+| 768px – 1200px     | 3       |
+| 480px – 767px      | 2       |
+| < 480px (Mobile)   | 1       |
+
+#### 5. State Persistence
+
+-   Saves filter, sort, and search states across page refreshes
+-   Powered by Zustand (with Immer for immutable updates)
+-   No browser storage (localStorage/sessionStorage) required
 
 ## Tech Stack
 
-- **Frontend Framework**: React
-- **Build Tool**: Vite with Rolldown
-- **State Management**: Zustand with Immer and persist
-- **Styling**: SCSS Modules
-- **Component Library**: Ant-Design
-- **Testing**: 
-  - Unit tests
-  - Test coverage reporting
-
-## Installation and Setup
-
-```bash
-# Clone the repository
-git clone [repository-url]
-cd clo-set
-
-# Install dependencies
-pnpm install
-
-# Start development server
-npm run start
-
-# Build for production
-npm run build
-
-
-# Run tests
-npm run test
-
-# Check test coverage
-npm run coverage
-```
+| Category           | Tools/Libraries                                      |
+| ------------------ | ---------------------------------------------------- |
+| Frontend Framework | React                                                |
+| Build Tool         | Vite (with Rolldown adapter for faster builds)       |
+| State Management   | Zustand (with Immer + persist for state persistence) |
+| Styling            | SCSS Modules (scoped styles + modular organization)  |
+| Component Library  | Ant Design (UI components for consistency)           |
+| Testing            | Vitest (unit tests) + Test Coverage Reporting        |

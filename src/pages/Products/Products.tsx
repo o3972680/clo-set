@@ -47,7 +47,6 @@ const Products = () => {
             <Sort
                 sortBy={sortBy}
                 onSortChange={(value) => setSortBy(value as never)}
-                isPaid={pricingOptions.Paid}
                 totalItems={totalItems}
             />
 

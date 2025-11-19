@@ -30,8 +30,6 @@ const useStoreStore = create<StoreState>()(
                 set((state) => {
                     state.pricingOptions[option] =
                         !state.pricingOptions[option];
-                    state.items = [];
-                    state.currentPage = 0;
                 });
                 if (option === "Paid" && !get().pricingOptions[option]) {
                     set((state) => {
@@ -44,8 +42,6 @@ const useStoreStore = create<StoreState>()(
             setPriceRange: (range) => {
                 set((state) => {
                     state.priceRange = range;
-                    state.items = [];
-                    state.currentPage = 0;
                 });
                 get().fetchInitialItems();
             },
@@ -53,8 +49,6 @@ const useStoreStore = create<StoreState>()(
             setKeyword: (keyword) => {
                 set((state) => {
                     state.keyword = keyword;
-                    state.items = [];
-                    state.currentPage = 0;
                 });
                 get().fetchInitialItems();
             },
@@ -62,8 +56,6 @@ const useStoreStore = create<StoreState>()(
             setSortBy: (sortOption) => {
                 set((state) => {
                     state.sortBy = sortOption;
-                    state.items = [];
-                    state.currentPage = 0;
                 });
                 get().fetchInitialItems();
             },
@@ -76,10 +68,7 @@ const useStoreStore = create<StoreState>()(
                         "View Only": false,
                     };
                     state.priceRange = [0, 999];
-                    state.keyword = "";
-                    state.items = [];
-                    state.currentPage = 0;
-                    state.sortBy = "Item Name";
+                    state.currentPage = 1;
                 });
                 get().fetchInitialItems();
             },
